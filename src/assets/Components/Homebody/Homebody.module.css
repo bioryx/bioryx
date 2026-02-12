@@ -58,7 +58,7 @@
 }
 @media(max-width:480px){
     .biocard{
-        display: block;
+        flex-direction: column;
     }
     .biomain{
         margin:10px;
@@ -67,10 +67,17 @@
         width: 100%;
     }
     .biocard2 img{
-        visibility: hidden;
         width:100%;
     }
     .biocard2{
-        display: block;
+        flex-direction: column-reverse;
+    }
+    .biobot h1{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .biotext h1{
+        margin-bottom: 20px;
+        font-size: 2.3rem;
     }
 }

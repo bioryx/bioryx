@@ -11,7 +11,7 @@ export default function Homebody() {
                 <img src="https://www.fauna-flora.org/wp-content/uploads/2017/06/naturepl_00568429.jpg" alt="" />
             </div>
             <div className={style.biocard2}>
-                <img src="https://cdn0-production-images-kly.akamaized.net/nB4apiIH4-48R_PLH4LeINABI5g=/640x360/smart/filters:quality(75):strip_icc()/kly-media-production/medias/3550109/original/035971800_1629818605-sid-balachandran-_9a-3NO5KJE-unsplash.jpg" alt="" />
+                <img src="https://i.pinimg.com/1200x/f2/e9/1a/f2e91a50ad0252a5731ec44444fa3b62.jpg" alt="" />
                 <div className={style.biotext2}>
                     <p>Built on curiosity and respect for life sciences, Bioryx connects students to learn together, exchange ideas, and promote scientific thinking and environmental awareness.</p>
                     <ul>
