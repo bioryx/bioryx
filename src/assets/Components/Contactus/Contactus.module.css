@@ -1,0 +1,66 @@
+.contactus{
+    margin: 1.2rem;
+}
+.contactus h1{
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.contactus ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.details{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+.details img{
+    flex:1;
+    width: 50%;
+    border-radius: 10px;
+}
+.details div{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.details div ul li svg{
+    cursor: pointer;
+    color:#2c3e50;
+}
+.socialIcons svg:hover{
+    color: #ecf0f1;
+}
+.socialIcons:hover{
+    background-color: #2c3e50;
+}
+.socialIcons {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #2c3e50;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.SocialIcons svg {
+    width: 24px;
+    height: 24px;
+    color: #2c3e50;
+}
+
