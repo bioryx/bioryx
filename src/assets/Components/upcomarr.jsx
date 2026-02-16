@@ -6,6 +6,6 @@ export const upcoming =[
         location: "Google meet",
         date: "February 21, 2026",
         time: "7:30 PM - 8:30 PM",
-        reglink:"https://forms.gle/MbnZtj44PtDZn5BW7"
+        reglink:"https://forms.gle/ANsFYV4ppDpmVJkQ6"
     }
 ]
