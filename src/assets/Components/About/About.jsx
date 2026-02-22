@@ -47,7 +47,7 @@ export default function About() {
 			  return (
               <>
                     <div className={style.container}>
-                        <div className={style.aboutus}>
+                        <header className={style.aboutus}>
                             <h1>ABOUT US</h1>
                             <p>
                             Bioryx is a student-run community created for biology enthusiasts across every domain of life sciences—from genetics and microbiology to ecology, botany, zoology, and conservation.
@@ -60,8 +60,8 @@ export default function About() {
                             <span className={style.tagline}>Bioryx — Where biology meets purpose</span>
                     
                             </p>
-                        </div>
-                        <div>
+                        </header>
+                        <main>
                             <div className={style.vision}>
                                 <div className={style.visioncontainer}>
                                     <h1>VISION</h1>
@@ -83,7 +83,7 @@ export default function About() {
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </main>
                         <div className={style.whatwedo}>
                             <h1>WHAT WE DO</h1>
                             <div className={style.cardcontainer}>
