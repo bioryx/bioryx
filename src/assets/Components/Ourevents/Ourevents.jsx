@@ -11,7 +11,15 @@ export default function Ourevents() {
             location: "Google meet",
             date: "14 February 2026",
             time: "8:00 PM - 9:00 PM"
-        }
+        },
+		{
+        title: "BIOLOGICAL INVASIONS. SO WHAT? ",
+        host: "Dr T. V. Sajeev, Chief Scientist, Kerala Forest Research Institute",
+        location: "Google meet",
+        date: "February 21, 2026",
+        time: "7:30 PM - 8:30 PM",
+        reglink:"https://forms.gle/MbnZtj44PtDZn5BW7"
+    }
     ]
 			  return (
               <>
