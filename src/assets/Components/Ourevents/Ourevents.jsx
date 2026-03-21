@@ -20,6 +20,13 @@ export default function Ourevents() {
             time: "7:30 PM - 8:30 PM"
         },
         {
+            title: "Lichens: Neither Plant nor Fungus… So What Are They?",
+            host: "Dr. Stephen Sequiera - Associate Professor & Research Guide, Maharaja’s College, Ernakulam",
+            location: "Google Meet",
+            date: "28 February 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
             title: "Seeds of Inquiry: Transforming Botanical Observations into Research Programmes",
             host: "Dr. Harikrishnan E - Assistant Professor, Payyannur College",
             location: "Google Meet",
