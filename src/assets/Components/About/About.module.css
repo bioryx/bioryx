@@ -2,9 +2,20 @@
     margin: 1rem;
     color:black;
     line-height: 1.8;
+    max-width: 1000px;
+    margin:0 200px;
 }
 .aboutus h1,.vision h1,.mission h1,.whatwedo h1{
     color:var(--secondary-color);
+}
+.aboutus h1{
+    margin: 1.1rem 0 0 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
 }
 .aboutus p,.vision p,.mission ul li{
     font-size: large;
@@ -50,6 +61,17 @@
     align-items: center;
     color: var(--secondary-color);
     margin: 40px 0;
+}
+.missioncontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.missioncontainer p{
+    text-align: center;
+    margin-left: 2rem;
+    font-size: 1.1rem;
 }
 @media(max-width:480px){
     .tagline{

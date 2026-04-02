@@ -6,10 +6,6 @@ function Corousal() {
     <Carousel>
       <Carousel.Item>
       <img className={style.image} src="https://sustainabletravel.org/wp-content/uploads/Asian-elephants-socializing-1200x675-1.webp"></img>
-        {/* <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption> */}
       </Carousel.Item>
       
       <Carousel.Item>
