@@ -1,7 +1,7 @@
 import './App.css'
 import {BrowserRouter as Router,Routes,Route } from 'react-router-dom'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/react'
+// import { Analytics } from '@vercel/analytics/react'
+// import { SpeedInsights } from '@vercel/speed-insights/react'
 import Home from './assets/Pages/Home/Home'
 import Aboutus from './assets/Pages/Aboutus/Aboutus'
 import Contact from './assets/Pages/Contact/Contact'
@@ -18,8 +18,8 @@ function App() {
           <Route path='/events' element={<Events/>}></Route>
         </Routes>
       </Router>
-      <Analytics />
-      <SpeedInsights />
+      {/* <Analytics />
+      <SpeedInsights /> */}
         </>
   )
 }
