@@ -1,7 +1,6 @@
 import style from './Homebody.module.css'
 import { upcoming } from '../upcomarr'
 import Upcoming from '../Upcoming/Upcoming'
-import { motion } from 'framer-motion'
 export default function Homebody() {
     return(
         <>
