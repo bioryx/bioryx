@@ -8,17 +8,26 @@
 }
 .card{
     display: flex;
+    flex-direction: column;
     color: #233329;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-    padding: 1.1rem;
-    width: 400px;
-    margin: 1.2rem 0;
-    background-color: rgba(188, 232, 217,0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border: 1px solid rgba(92, 148, 110, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(188, 232, 217,0.3);
+    height: 100%;
 }
 .datetime{
-    background-color: rgba(42, 193, 145, 0.197);
+    background-color: rgba(42, 193, 145, 0.15);
     width: fit-content;
-    padding: 0.2rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .card:hover{
     box-shadow: 5px 5px 7px rgba(0,0,0,0.3);
@@ -39,10 +48,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 2px;
+    border-radius: 6px;
+    font-weight: 600;
     cursor: pointer;
     height: 2.7rem;
-    width: 8rem;
+    width: fit-content;
+    padding: 0 1.5rem;
+    margin-top: 1rem;
 }
 .content a{
     text-decoration: none;
