@@ -21,18 +21,40 @@ export default function Homebody() {
                     <p>Built on curiosity and a deep respect for the life sciences, Bioryx brings students together to learn collaboratively, exchange ideas, and engage in meaningful discussions. It fosters scientific thinking and environmental awareness while creating a supportive space for exploration and growth, empowering students to develop their knowledge, curiosity, and identity as biologists.</p>
                 </motion.div>
             </div>
-            <motion.div className={style.biobot} initial={{opacity:0, scale: 0.9}} whileInView={{opacity:1, scale: 1}} transition={{duration:0.6}} viewport={{ once: true }}>
-                <h1>Bioryx - Where biology meets purpose...</h1>
-            </motion.div>
-            <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:0.8}} viewport={{ once: true }}>
+            <div className={style.bioquote}>
+                <motion.div className={style.biotext3} initial={{opacity:0, y: 50}} whileInView={{opacity:1, y: 0}} transition={{duration:0.8}} viewport={{ once: true }}>
+                    <h2>OUR COMMITMENT</h2>
+                    <p>We are committed to fostering a vibrant community of biology students who are passionate about exploring the wonders of life sciences. Our goal is to provide a platform for learning, collaboration, and growth in the field of biology.</p>
+                </motion.div>
+                <motion.div className={style.biotext4} initial={{opacity:0, y: 50}} whileInView={{opacity:1, y: 0}} transition={{duration:0.8}} viewport={{ once: true }}>
+                    <h3>"Here we are, arguably the most intelligent being... yet we're destroying the only home we have."</h3>
+                    <p className={style.author}>— Jane Goodall</p>
+                </motion.div>
+            </div>
+            <motion.div className={style.bioevent} initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:0.8}} viewport={{ once: true }}>
                 <h1>Our Events</h1>
-                <div className={style.cards}>
+                <motion.div 
+                    className={style.cards}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+                    }}
+                >
                     {upcoming.map((event,index)=>{
                         return(
-                            <Upcoming key={index} image={event.image} title={event.title} host={event.host} location={event.location} date={event.date} time={event.time} reglink={event.reglink}></Upcoming>
+                            <motion.div 
+                                className={style.upcoming} 
+                                key={index}
+                                variants={{ hidden: { opacity: 0, scale: 0.9, y: 30 }, visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } } }}
+                            >
+                                <Upcoming image={event.image} title={event.title} host={event.host} location={event.location} date={event.date} time={event.time} reglink={event.reglink}></Upcoming>
+                            </motion.div>
                         )
                     })}
-                </div>
+                </motion.div>
             </motion.div>
         </div>
         </>

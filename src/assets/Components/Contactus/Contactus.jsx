@@ -20,6 +20,7 @@ export default function Contactus() {
                             <div>
                                 <h4>+91 7907081880</h4>
                                 <h4>bioryx.official@gmail.com</h4>
+                                <h4>info@bioryx.org</h4>
                             </div>
                         </div>
                     </div>
