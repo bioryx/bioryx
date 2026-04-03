@@ -49,6 +49,13 @@ export default function Ourevents() {
             time: "7:30 PM - 8:30 PM"
         },
         {
+            title: "Making Sense in Biology: The Science of Evolution",
+            host: "Dr. Swaran PR - Associate Professor & Head, Department of Zoology, Payyanur College, Kannur",
+            location: "Google Meet",
+            date: "28 March 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
             title: "Stories of Simplicity to Significance: The Hidden Power of Marine Sponges",
             host: "Dr. Anita M George - Marine Biologist & Expert in Sponge Taxonomy, Assistant Professor at the University of Kerala",
             location: "Google Meet",
