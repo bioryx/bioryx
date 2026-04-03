@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import style from './Corousal.module.css'
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Elephant from '../../images/Elephant.jpg'
+import Elephant from '../../images/elephant.jpg'
 
 function Corousal() {
   return (
