@@ -34,7 +34,7 @@ const People = () => {
       id: 3,
       name: "Georgy P Joseph",
       designation: "Joint Secretary",
-      occupation: "2nd Year MSc Zoology, Sacred Heart College Thevara",
+      occupation: "1st Year MSc Zoology, Sacred Heart College Thevara",
       email: "georgypjoseph@gmail.com",
       phoneno: "8330886218",
       img: Gregory

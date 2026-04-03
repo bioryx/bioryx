@@ -4,9 +4,13 @@
 .biomain {
     margin:20px;
     color: #233323;
+    margin: 3rem;
 }
 .biomain *{
-    color: #233323;
+    color: var(--secondary-color);
+}
+.biotext p{
+    text-align: center;
 }
 .biotext
 {
@@ -17,7 +21,7 @@
     color: #233323;
 }
 .biotext,.biotext2{
-    flex:5;
+    flex:1;
 }
 .biotext2{
     text-align: center;
@@ -35,10 +39,47 @@
     width: 40%;
     height: auto;
 }
-.biotext p{
-    font-size: 20px;
+.biotext h1,.biotext2 h1{
+    color:var(--primary-color);
+}
+.bioquote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin:3rem 0;
+    background-color: var(--bg-over);
+    padding: 2.3rem;
+    border-radius: 10px;
+}
+.biotext3{
+    border-right:5px solid var(--primary-color);
+}
+.biotext3 h2{
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-color);
+}
+.biotext3 p{
+    font-size: 1.4rem;
     line-height: 1.6;
-    margin: 0 10px;
+    margin-right: 1rem;
+}
+.biotext3,.biotext4{
+    flex:1;
+}
+.author{
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--tertiary-color);
+}
+.biotext p{
+    font-size: 1.35rem;
+    line-height: 1.6;
+    margin-right: 10px;
 }
 .biotext h1{
     margin-bottom: 40px;
@@ -69,10 +110,25 @@
 .biobot{
     background-color: rgb(3, 45, 3);
 }
+.bioevent{
+    background-color: #ebe9e8;
+    padding: 2rem;
+    border-radius: 10px;
+}
+.bioevent h1{
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    font-size: 3rem;
+}
 .cards{
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
+}
+.upcoming{
+    display: flex;
+    flex: 1 1 350px;
+    max-width: 500px;
 }
 @media(max-width:480px){
     .biocard{
@@ -97,5 +153,17 @@
     .biotext h1{
         margin-bottom: 20px;
         font-size: 2.3rem;
+    }
+    .bioquote{
+        flex-direction: column;
+        text-align: center;
+    }
+    .biotext3{
+        border-right: none;
+        border-bottom: 5px solid var(--primary-color);
+        margin-bottom: 1.2rem;
+    }
+    .biotext3 h2{
+        font-size: 2.5rem;
     }
 }

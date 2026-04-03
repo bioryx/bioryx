@@ -1,9 +1,9 @@
 .info ul li svg{
     cursor: pointer;
-    color:var(--secondary-color);
+    color:var(--bg-over);
 }
 .socialIcons svg:hover{
-    color: #ecf0f1;
+    color: var(--primary-color);
 }
 .socialIcons {
     width: 40px;
@@ -18,7 +18,7 @@
 .footer{
     display: flex;
     justify-content: space-between;
-    background-color: #233323;
+    background-color: var(--secondary-color);
     padding: 1.1rem;
 }
 .info ul{
@@ -27,7 +27,7 @@
     list-style: none;
 }
 .footer h1{
-    color:var(--primary-color);
+    color:var(--bg-over);
     letter-spacing: 2px;
 }
 @media(max-width: 600px){

@@ -1,3 +1,4 @@
+import Banner from "../../Components/Banner/Banner";
 import Corousal from "../../Components/Corousal/Corousal";
 import Footer from "../../Components/Footer/Footer";
 import Homebody from "../../Components/Homebody/Homebody";
@@ -8,7 +9,7 @@ export default function Home()
     return(
         <>
             <Navbar></Navbar>
-            <Corousal></Corousal>
+            <Banner></Banner>
             <Homebody></Homebody>
             <Footer></Footer>
         </>

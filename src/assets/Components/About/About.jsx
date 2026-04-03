@@ -64,11 +64,11 @@ export default function About() {
                             <br/><br />
                             <span className={style.highlight}>At its core, Bioryx is a space for learners who ask questions, think critically, and care deeply about the natural world.</span>
                             <br/><br />
-                            <span className={style.tagline}>Bioryx — Where biology meets purpose</span>
+                            {/* <span className={style.tagline}>Bioryx — Where biology meets purpose</span> */}
                     
                             </p>
                         </motion.header>
-                        <main>
+                        <main className={style.mv}>
                             <div className={style.vision}>
                                 <motion.div 
                                     className={style.visioncontainer}

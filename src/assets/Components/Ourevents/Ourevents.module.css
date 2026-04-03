@@ -28,3 +28,15 @@
     align-items: stretch;
     gap: 1.5rem;
 }
+@media(max-width: 480px) {
+    .cards{
+        flex-direction: column;
+        margin: 0 1.2rem;
+    }
+    .event h1{
+        margin: 0 1rem;
+    }
+    .headerLine{
+        margin: 0 1rem 30px 1rem;
+    }
+}

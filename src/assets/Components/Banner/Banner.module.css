@@ -1,0 +1,31 @@
+.banner{
+    background:url('../../images/mountainbg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 8rem 100px;
+}
+.banner h1{
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+.banner h3{
+    font-family: var(--secondary-font);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+@media(max-width:768px){
+    .banner{
+        padding: 5rem 2rem;
+        margin-bottom: 1.2rem;
+        background-position: center;
+        height: 250px;
+    }
+    .banner h1{
+        font-size: 2rem;
+    }
+    .banner h3{
+        font-size: 1rem;
+    }
+}
