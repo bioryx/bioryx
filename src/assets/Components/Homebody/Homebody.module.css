@@ -19,6 +19,17 @@
 .biotext,.biotext2{
     flex:5;
 }
+.biotext2{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.biotext2 h1{
+    margin-bottom: 1.2rem;
+    text-decoration: underline;
+}
 .biocard img,.biocard2 img{
     flex:1;
     border-radius: 5px;
