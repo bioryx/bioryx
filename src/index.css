@@ -2,11 +2,15 @@
 :root{
   font-family: 'Poppins',sans-serif;
   --primary-color: #5C946E;
-  --secondary-color: #028800;
-  
+  --secondary-color: #2D5A27;
+  background-color: #fbf9f8;
 }
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #fbf9f8;
 }

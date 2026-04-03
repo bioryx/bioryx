@@ -14,8 +14,6 @@
     display: flex;
     align-items: center;
     font-size: 4rem;
-    text-decoration: underline;
-    text-underline-offset: 1rem;
 }
 .aboutus p,.vision p,.mission ul li{
     font-size: large;
@@ -130,5 +128,12 @@
         width: 100%;
         text-align: left;
         line-height: inherit;
+    }
+    .container{
+        margin: 1rem;
+        color:black;
+        line-height: 1.8;
+        max-width: 100%;
+        margin:1rem;
     }
 }

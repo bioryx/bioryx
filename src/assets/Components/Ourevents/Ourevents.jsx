@@ -46,6 +46,13 @@ export default function Ourevents() {
             location: "Google Meet",
             date: "21 March 2026",
             time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Stories of Simplicity to Significance: The Hidden Power of Marine Sponges",
+            host: "Dr. Anita M George - Marine Biologist & Expert in Sponge Taxonomy, Assistant Professor at the University of Kerala",
+            location: "Google Meet",
+            date: "4 April 2026",
+            time: "7:30 PM - 8:30 PM"
         }
     ]
 			  return (
