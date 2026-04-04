@@ -1,14 +1,31 @@
 .container{
     margin: 1rem;
-    color:black;
+    color:var(--secondary-color);
     line-height: 1.8;
+    max-width: 1000px;
+    margin:0 200px;
 }
 .aboutus h1,.vision h1,.mission h1,.whatwedo h1{
-    color:var(--secondary-color);
+    color:var(--primary-color);
 }
-.aboutus p,.vision p,.mission ul li{
-    font-size: large;
+b,.highlight{
+    color: var(--tertiary-color);
+}
+.aboutus h1{
+    margin: 1.1rem 0 0 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+}
+.aboutus p,.mission ul li{
+    font-size: 1.3rem;
     margin: 1rem 0;
+}
+.mv{
+    background-color: var(--bg-over);
+    padding: 2rem;
+    border-radius: 10px;
 }
 .highlight{
     font-weight: bold;
@@ -21,12 +38,13 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color: #233329;
+    background-color: var(--bg-over);
     padding: 1rem;
     width: fit-content;
     margin: 1rem auto;
     border-radius: 5px;
-    color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
 }
 .tagline:hover{
     border:2px solid var(--secondary-color);
@@ -50,6 +68,17 @@
     align-items: center;
     color: var(--secondary-color);
     margin: 40px 0;
+}
+.missioncontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.missioncontainer p,.vision p{
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.1rem;
 }
 @media(max-width:480px){
     .tagline{
@@ -108,5 +137,12 @@
         width: 100%;
         text-align: left;
         line-height: inherit;
+    }
+    .container{
+        margin: 1rem;
+        color:black;
+        line-height: 1.8;
+        max-width: 100%;
+        margin:1rem;
     }
 }

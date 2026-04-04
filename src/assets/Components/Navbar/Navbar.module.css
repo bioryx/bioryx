@@ -4,30 +4,51 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: #233329;
+    background: var(--bg-color);
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    font-family: var(--secondary-font);
 }
 .navlinks{
     display: flex;
-    gap: 12px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     list-style: none;
     font-size: 1.3rem;
     flex-wrap: wrap;
-    
+    margin: 0;
+}
+.navbarr button{
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.joinbtn a{
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.navbarr button:hover {
+    background-color: var(--tertiary-color);
+    transition: 0.3s;
 }
 .navlinks li a{
     text-decoration: none;
-    color: white;
+    color: var(--tertiary-color);
+    display: inline-block;
+    transition: 0.3s;
 }
 .title{
     font-size: 1.7rem;
-    color: #b0cdc5;
+    color: var(--primary-color);
     letter-spacing: 2px;
+    margin: 0;
 }
 .navlinks li a:hover{
     color: var(--primary-color);
-    transition: 0.3s;
     text-decoration: underline;
     text-underline-offset: 10px;
 }
@@ -41,60 +62,102 @@
     gap: 10px;
     justify-content: center;
 }
-
-.navlinks li a{
-    display: inline-block;
-    padding: 8px 6px;
-}
-.sidenavbar{
-    position: absolute;
-    top: 0;
-    right:0;
-    z-index: 99;
-    background-color: rgb(255, 255, 255);
-    /* backdrop-filter: blur(15px); */
-    height: 100%;
-    width: 200px;
-    display: none;
-}
-.sidenavbar ul{
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.sidenavbar ul li{ 
-    padding: 15px; 
-} 
-.sidenavbar ul li a{
-    text-decoration: none; 
-    color: black; 
-    font-size: 1.2rem; 
-} 
-.sidenavbar ul li a:hover{ 
-    color: var(--primary-color); 
-    transition: 0.3s; 
-}
-.closeIcon{
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-}
 .menuIcon{
     display: none;
     cursor: pointer;
-    color: white;
+    color: var(--primary-color);
+    transition: 0.3s;
 }
-.sideitem{
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    margin:1.1rem 0;
-    width: 80%;
-    border-radius: 3px;
+.menuIcon:hover {
+    color: var(--tertiary-color);
+}
+
+/* Sidebar Styling */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 98;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.sidenavbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    background-color: var(--bg-color);
+    height: 100vh;
+    width: 280px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenavbar.open {
+    transform: translateX(0);
+}
+
+.sidenavlinks{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.closeBtn {
+    padding: 20px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.closeIcon{
     cursor: pointer;
-    
+    color: var(--primary-color);
+    transition: 0.3s;
 }
+.closeIcon:hover {
+    color: var(--tertiary-color);
+    transform: scale(1.1);
+}
+
+.sideitem{
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--bg-over);
+}
+
+.sideitem a{
+    text-decoration: none; 
+    color: var(--primary-color); 
+    font-size: 1.3rem; 
+    display: block;
+    padding: 1.2rem 2.5rem;
+    transition: 0.3s ease;
+    font-weight: 500;
+} 
+
+.sideitem a:hover{ 
+    background-color: var(--bg-over);
+    color: var(--tertiary-color); 
+    padding-left: 3rem;
+}
+
 @media(max-width:600px){
     .menuIcon{
         display: block;
@@ -105,8 +168,9 @@
 }
 @media(max-width:480px){
     .sidenavbar{
-        width: 50%;
-        height: fit-content;
-        margin-bottom:1.9rem;
+        width: 75%;
+    }
+    .navbarr{
+        display: none;
     }
 }

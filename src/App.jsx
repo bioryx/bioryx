@@ -6,6 +6,7 @@ import Home from './assets/Pages/Home/Home'
 import Aboutus from './assets/Pages/Aboutus/Aboutus'
 import Contact from './assets/Pages/Contact/Contact'
 import Events from './assets/Pages/Events/Events'
+import People from './assets/Components/People/People'
 function App() {
 
   return (
@@ -16,9 +17,10 @@ function App() {
           <Route path='/aboutus' element={<Aboutus/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/events' element={<Events/>}></Route>
+          <Route path='/people' element={<People/>}></Route>
         </Routes>
       </Router>
-      <Analytics />
+       <Analytics />
       <SpeedInsights />
         </>
   )

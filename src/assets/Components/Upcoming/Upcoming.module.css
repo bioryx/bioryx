@@ -1,73 +1,152 @@
-.content p svg{
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
-}
-.content p{
-    margin: 0.3rem 0;
-}
-.card{
+.card {
     display: flex;
-    color: #233329;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-    padding: 1.1rem;
-    width: 400px;
-    margin: 1.2rem 0;
-    background-color: rgba(188, 232, 217,0.4);
-}
-.datetime{
-    background-color: rgba(42, 193, 145, 0.197);
-    width: fit-content;
-    padding: 0.2rem;
-}
-.card:hover{
-    box-shadow: 5px 5px 7px rgba(0,0,0,0.3);
+    flex-direction: column;
+    color: var(--secondary-color);
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border-radius: 16px;
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
     transition: 0.3s ease;
-    transform: scale(1.005);
 }
-.content{
-   line-height: 1;
+
+.card:hover {
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.08);
+    transform: scale(1.01);
 }
-.content h4{
-    margin-bottom: 0.5rem;
-}
-.register{
-    padding: 0.5rem 1.1rem;
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
+
+.cardHeader {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.dateBadge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    border-radius: 2px;
-    cursor: pointer;
-    height: 2.7rem;
-    width: 8rem;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
-.content a{
-    text-decoration: none;
+
+.month {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--bg-over);
 }
-.register:hover{
-    border: 2px solid var(--secondary-color);
-    background-color: inherit;
+
+.day {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--bg-over);
+    font-family: var(--primary-font);
+}
+
+.eventInfoTop {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.location {
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--secondary-color);
+    letter-spacing: 0.5px;
 }
-.card img{
-    width: 30%;
-    height: auto;
-    margin-right: 1.1rem;
-    border-radius: 5px;
+
+.time {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    gap: 0.3rem;
 }
-@media(max-width:480px){
-    .card{
-        width: 100%;
+
+.time svg {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.badge {
+    background-color: var(--bg-over);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.register {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--tertiary-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.register svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.2s;
+}
+
+.register:hover {
+    color: var(--primary-color);
+}
+
+.register:hover svg {
+    transform: translateX(4px);
+}
+
+@media(max-width:720px) {
+    .card {
+        padding: 1.2rem;
     }
-}
-@media(max-width:720px){
-    .card{
-        width: 100%;
-    }
-    .datetime p{
-        font-size: 0.9rem;
+    .title {
+        font-size: 1.3rem;
     }
 }

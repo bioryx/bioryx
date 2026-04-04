@@ -1,4 +1,4 @@
-import Corousal from "../../Components/Corousal/Corousal";
+import Banner from "../../Components/Banner/Banner";
 import Footer from "../../Components/Footer/Footer";
 import Homebody from "../../Components/Homebody/Homebody";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -8,7 +8,7 @@ export default function Home()
     return(
         <>
             <Navbar></Navbar>
-            <Corousal></Corousal>
+            <Banner></Banner>
             <Homebody></Homebody>
             <Footer></Footer>
         </>
