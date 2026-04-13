@@ -61,6 +61,27 @@ export default function Ourevents() {
             location: "Google Meet",
             date: "4 April 2026",
             time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "BIO-TALK Inauguration & Invasive Alien Species and Their Impact on Biodiversity",
+            host: "Inauguration by Dr. T.V. Sajeev - Chief Scientist, KFRI | Talk by Aleesha Anil - 1st Year B.Sc. Zoology, St. Joseph’s College, Devagiri",
+            location: "Google Meet",
+            date: "5 April 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Promoting Firefly Conservation Through Public Awareness and Citizen Science",
+            host: "Dr. Sheik Mohammed Shamsudeen R - Entomologist & Expert in Insect Taxonomy, Associate Professor at Kannur University",
+            location: "Google Meet",
+            date: "11 April 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "The Green Frontier: Botany from Earth to Deep Space",
+            host: "Anagha Jayasooriya - 1st Year B.Sc. Botany, CMS College Kottayam",
+            location: "Google Meet",
+            date: "12 April 2026",
+            time: "7:30 PM - 8:30 PM"
         }
     ]
 			  return (
