@@ -1,18 +1,16 @@
 export const upcoming =[
     {
-        title: "Stories of Simplicity to Significance: The Hidden Power of Marine Sponges",
-        host: "Dr. Anita M George - Marine Biologist & Expert in Sponge Taxonomy, Assistant Professor at the University of Kerala",
+        title: "Treasure Islands of the Sky",
+        host: "Ms. Navya S - Senior Research Fellow, Botanical Survey of India",
         location: "Google Meet",
-        date: "4 April 2026",
-        time: "7:30 PM - 8:30 PM",
-        reglink:"https://chat.whatsapp.com/IDyoVAj9X0QFfMpI2DTfC8"
+        date: "18 April 2026",
+        time: "7:30 PM - 8:30 PM"
     },
     {
-        title: "BIO-TALK Inauguration & Invasive Alien Species and Their Impact on Biodiversity",
-        host: "Inauguration by Dr. T.V. Sajeev - Chief Scientist, KFRI | Talk by Aleesha Anil - 1st Year B.Sc. Zoology, St. Joseph’s College, Devagiri",
+        title: "Mind Control in Nature: Parasites That Manipulate Insects",
+        host: "Ashwati Biju - MSc Wildlife Science, Wildlife Institute of India (2024–26)",
         location: "Google Meet",
-        date: "5 April 2026",
-        time: "7:30 PM - 8:30 PM",
-        reglink:"https://chat.whatsapp.com/IDyoVAj9X0QFfMpI2DTfC8"
+        date: "19 April 2026",
+        time: "7:30 PM - 8:30 PM"
     }
 ]
