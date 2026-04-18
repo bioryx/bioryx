@@ -9,13 +9,13 @@ import Gregory from '../../images/Gregory.jpeg'
 import Gayatri from '../../images/Gayatri.jpeg'
 import Soniya from '../../images/Soniya.jpeg'
 import Rosemary from '../../images/Rosemary.jpeg'
-import Tharun from '../../images/Tharun.jpeg'
+import Dia from '../../images/Dia.jpeg'
 const People = () => {
   const peopleArray = [
     {
       id: 1,
       name: "Ahammed Ihzan",
-      designation: "General Secretary",
+      designation: "Secretary",
       occupation: "2nd Year BSc Zoology, St Xavier's College Vaikom",
       email: "ahammedihzan79@gmail.com",
       phoneno: "7907081880",
@@ -68,21 +68,12 @@ const People = () => {
     },
     {
       id: 7,
-      name: "Tharun Uday Kalyanpur",
-      designation: "Board Member",
-      occupation: "3rd Year BSc Zoology, Kuriakose Elias College Mannanam",
-      email: "tharun_kalyanpur10@yahoo.com",
-      phoneno: "9495963976",
-      img: Tharun
-    },
-    {
-      id: 8,
-      name: "Alan",
-      designation: "Board Member",
-      occupation: "2nd Year BSc Zoology, Deva Matha College Kuravilangad",
-      email: "",
-      phoneno: "",
-      img: "https://static.vecteezy.com/system/resources/previews/004/511/281/original/default-avatar-photo-placeholder-profile-picture-vector.jpg"
+      name: "Dia H",
+      designation: "Student",
+      occupation: "2nd Year BSc Zoology, Mar Ivanios College",
+      email: "diahydros@gmail.com",
+      phoneno: "9037753551",
+      img: Dia
     }
   ];
 
