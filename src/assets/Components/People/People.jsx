@@ -58,6 +58,15 @@ const People = () => {
       img: Soniya
     },
     {
+      id: 7,
+      name: "Dia H",
+      designation: "Board Member",
+      occupation: "2nd Year BSc Zoology, Mar Ivanos College Thiruvananthapuram",
+      email: "diahydros@gmail.com",
+      phoneno: "9037753551",
+      img: Dia
+    },
+    {
       id: 6,
       name: "Rosemary Raju",
       designation: "Board Member",
@@ -65,15 +74,6 @@ const People = () => {
       email: "rosemaryraju2005@gmail.com",
       phoneno: "8078771220",
       img: Rosemary
-    },
-    {
-      id: 7,
-      name: "Dia H",
-      designation: "Student",
-      occupation: "2nd Year BSc Zoology, Mar Ivanios College",
-      email: "diahydros@gmail.com",
-      phoneno: "9037753551",
-      img: Dia
     }
   ];
 
