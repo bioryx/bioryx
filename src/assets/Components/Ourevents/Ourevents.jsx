@@ -82,6 +82,13 @@ export default function Ourevents() {
             location: "Google Meet",
             date: "12 April 2026",
             time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Treasure Islands of the Sky",
+            host: "Ms. Navya S - Senior Research Fellow, Botanical Survey of India",
+            location: "Google Meet",
+            date: "18 April 2026",
+            time: "7:30 PM - 8:30 PM"
         }
     ]
 			  return (
