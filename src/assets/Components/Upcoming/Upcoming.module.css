@@ -117,6 +117,9 @@
     color: var(--primary-color);
 }
 
+.register:hover{
+    cursor: pointer;
+}
 .register {
     display: flex;
     align-items: center;
