@@ -1,9 +1,9 @@
 export const upcoming =[
     {
-        title: "Mind Control in Nature: Parasites That Manipulate Insects",
-        host: "Ashwati Biju - MSc Wildlife Science, Wildlife Institute of India (2024–26)",
+        title: "Odonates: The Overlooked Sentinels of Freshwater Health",
+        host: "Dr. Vivek Chandran A - Assistant Professor (Contract), Department of Wildlife Science, College of Forestry, Kerala Agricultural University",
         location: "Google Meet",
-        date: "19 April 2026",
+        date: "25 April 2026",
         time: "7:30 PM - 8:30 PM"
     }
 ]
