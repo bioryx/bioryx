@@ -15,25 +15,16 @@ const People = () => {
     {
       id: 1,
       name: "Ahammed Ihzan",
-      designation: "Secretary",
+      designation: "Chairperson",
       occupation: "2nd Year BSc Zoology, St Xavier's College Vaikom",
       email: "ahammedihzan79@gmail.com",
       phoneno: "7907081880",
       img: Ihzan
     },
     {
-      id: 2,
-      name: "Nithin Nandakumar",
-      designation: "President",
-      occupation: "MSc Botany Graduate, Maharajas College Ernakulam",
-      email: "nthnnandakumar@gmail.com",
-      phoneno: "6282390873",
-      img: Nithin
-    },
-    {
       id: 3,
       name: "Georgy P Joseph",
-      designation: "Joint Secretary",
+      designation: "Vice Chairperson",
       occupation: "1st Year MSc Zoology, Sacred Heart College Thevara",
       email: "georgypjoseph@gmail.com",
       phoneno: "8330886218",
@@ -42,16 +33,25 @@ const People = () => {
     {
       id: 4,
       name: "Gayatri Suresh Nair",
-      designation: "Vice President",
+      designation: "Executive director",
       occupation: "1st Year BSc Zoology, NSS College Ottapalam",
       email: "igayatrisureshnair@gmail.com",
       phoneno: "7559871045",
       img: Gayatri
     },
     {
+      id: 2,
+      name: "Nithin Nandakumar",
+      designation: "Director of Operations",
+      occupation: "MSc Botany Graduate, Maharajas College Ernakulam",
+      email: "nthnnandakumar@gmail.com",
+      phoneno: "6282390873",
+      img: Nithin
+    },
+    {
       id: 5,
       name: "K Soniya",
-      designation: "Treasurer",
+      designation: "Tresurer & Finance Officer",
       occupation: "2nd Year MSc Zoology, Sree Narayana College Kannur",
       email: "soniyasuresh979@gmail.com",
       phoneno: "7510230483",
@@ -60,7 +60,7 @@ const People = () => {
     {
       id: 7,
       name: "Dia H",
-      designation: "Board Member",
+      designation: "Media Director",
       occupation: "2nd Year BSc Zoology, Mar Ivanos College Thiruvananthapuram",
       email: "diahydros@gmail.com",
       phoneno: "9037753551",
@@ -69,7 +69,7 @@ const People = () => {
     {
       id: 6,
       name: "Rosemary Raju",
-      designation: "Board Member",
+      designation: "Program Director",
       occupation: "3rd Year BSc Zoology, Kuriakose Elias College Mannanam",
       email: "rosemaryraju2005@gmail.com",
       phoneno: "8078771220",
