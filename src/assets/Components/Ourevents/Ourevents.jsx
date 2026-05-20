@@ -96,6 +96,48 @@ export default function Ourevents() {
             location: "Google Meet",
             date: "19 April 2026",
             time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Beyond Spiders: The Hidden World of Neglected Arachnids, with Insights from Pseudoscorpions",
+            host: "Dr. Jithin Johnson - Arachnologist & Assistant Professor, Bharata Mata College, Thrikkakara",
+            location: "Google Meet",
+            date: "2 May 2026",
+            time: "8:00 PM - 9:00 PM"
+        },
+        {
+            title: "Nature’s Incognito Mode: The Evolutionary Mastery of Disguise",
+            host: "A. Bhaarathi - 3rd Year BSc Zoology, Justice Basheer Ahmed Sayeed College for Women, Chennai",
+            location: "Google Meet",
+            date: "3 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Ecological Niche Specificity: A Framework for Conserving Threatened Low-Elevation Trees",
+            host: "Dr. Devika M Anilkumar - Postdoctoral Fellow, BGCI, UK | Research Associate, Western Ghats Hornbill Foundation",
+            location: "Google Meet",
+            date: "9 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Biodiversity Conservation",
+            host: "Kavya N - Final Year MSc Botany, Dr. Manmohan Singh Bengaluru City University",
+            location: "Google Meet",
+            date: "10 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Marine Ecosystem in a Changing Climate",
+            host: "Dr. Grinson George - Director, ICAR–Central Marine Fisheries Research Institute (CMFRI), Kochi",
+            location: "Google Meet",
+            date: "16 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Omega-3 Against Depression",
+            host: "Anandhu V - 2nd Year BSc (Hons) Zoology, Sacred Heart College, Thevara",
+            location: "Google Meet",
+            date: "17 May 2026",
+            time: "7:30 PM - 8:30 PM"
         }
     ]
 			  return (
