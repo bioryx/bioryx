@@ -138,6 +138,34 @@ export default function Ourevents() {
             location: "Google Meet",
             date: "17 May 2026",
             time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "The Hornbill–Habitat Link: Conservation in the Climate Change Paradigm",
+            host: "Dr. Amitha Bachan K.H. - Director, CETC Hornbill Foundation | Assistant Professor, MES Asmabi College",
+            location: "Google Meet",
+            date: "23 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Bioindicators and BiomonitorS",
+            host: "Rajalakshmi Shaji - MSc Environmental Science, Pondicherry University",
+            location: "Google Meet",
+            date: "24 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "വന്യജീവി ഫോട്ടോഗ്രാഫി: അവസരങ്ങളും പാലിക്കേണ്ട മര്യാദകളും",
+            host: "Mr. Reji Chandran - Wildlife Photographer",
+            location: "Google Meet",
+            date: "30 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Nutritional Requirement of Our Body",
+            host: "Kashinath K - BSc Zoology, Malabar Christian College, Kozhikode",
+            location: "Google Meet",
+            date: "31 May 2026",
+            time: "7:30 PM - 8:30 PM"
         }
     ]
 			  return (
