@@ -1,16 +1,16 @@
 export const upcoming =[
     {
-        title: "The Hornbill–Habitat Link: Conservation in the Climate Change Paradigm",
-        host: "Dr. Amitha Bachan K.H. - Director, CETC Hornbill Foundation | Assistant Professor, MES Asmabi College",
+        title: "Freshwater Fishes as Models for Understanding Ecology, Evolution and Human History",
+        host: "Dr. C. P. Shaji - Taxonomic Expert, Conservation Biologist & Natural History Researcher",
         location: "Google Meet",
-        date: "23 May 2026",
+        date: "6 June 2026",
         time: "7:30 PM - 8:30 PM"
     },
     {
-        title: "Bioindicators and BiomonitorS",
-        host: "Rajalakshmi Shaji - MSc Environmental Science, Pondicherry University",
+        title: "Human Microbiome",
+        host: "Meenakshy K J - BSc–MSc Integrated Biology, College of Climate Change and Environmental Science, Kerala Agricultural University",
         location: "Google Meet",
-        date: "24 May 2026",
+        date: "7 June 2026",
         time: "7:30 PM - 8:30 PM"
     }
 ]
