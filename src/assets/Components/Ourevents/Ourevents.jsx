@@ -98,6 +98,20 @@ export default function Ourevents() {
             time: "7:30 PM - 8:30 PM"
         },
         {
+            title: "Odonates: The Overlooked Sentinels of Freshwater Health",
+            host: "Dr. Vivek Chandran A - Assistant Professor (Contract), Department of Wildlife Science, College of Forestry, Kerala Agricultural University",
+            location: "Google Meet",
+            date: "25 April 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Farming Beyond Seasons: Biological Optimisation in Controlled Environment Agriculture (Njattuvela 24×7)",
+            host: "Parvathi Chandra Prasanth - 2nd Year BSc Botany, Maharaja’s College, Ernakulam",
+            location: "Google Meet",
+            date: "26 April 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
             title: "Beyond Spiders: The Hidden World of Neglected Arachnids, with Insights from Pseudoscorpions",
             host: "Dr. Jithin Johnson - Arachnologist & Assistant Professor, Bharata Mata College, Thrikkakara",
             location: "Google Meet",
@@ -165,6 +179,20 @@ export default function Ourevents() {
             host: "Kashinath K - BSc Zoology, Malabar Christian College, Kozhikode",
             location: "Google Meet",
             date: "31 May 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Freshwater Fishes as Models for Understanding Ecology, Evolution and Human History",
+            host: "Dr. C. P. Shaji - Taxonomic Expert, Conservation Biologist & Natural History Researcher",
+            location: "Google Meet",
+            date: "6 June 2026",
+            time: "7:30 PM - 8:30 PM"
+        },
+        {
+            title: "Human Microbiome",
+            host: "Meenakshy K J - BSc–MSc Integrated Biology, College of Climate Change and Environmental Science, Kerala Agricultural University",
+            location: "Google Meet",
+            date: "7 June 2026",
             time: "7:30 PM - 8:30 PM"
         }
     ]
