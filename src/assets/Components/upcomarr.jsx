@@ -1,16 +1,16 @@
 export const upcoming =[
     {
-        title: "Freshwater Fishes as Models for Understanding Ecology, Evolution and Human History",
-        host: "Dr. C. P. Shaji - Taxonomic Expert, Conservation Biologist & Natural History Researcher",
+        title: "The Hidden Impact on Wildlife When Cities Heat Up: Insights from Geckos",
+        host: "Mr. Amith S J - PhD Scholar & Guest Faculty, CUBEC, Jain (Deemed-to-be University), Bengaluru",
         location: "Google Meet",
-        date: "6 June 2026",
+        date: "13 June 2026",
         time: "7:30 PM - 8:30 PM"
     },
     {
-        title: "Human Microbiome",
-        host: "Meenakshy K J - BSc–MSc Integrated Biology, College of Climate Change and Environmental Science, Kerala Agricultural University",
+        title: "Wildlife Corridors: Reconnecting Fragmented Landscapes for a Biodiverse Future",
+        host: "Mr. Sandesh J S - M.Sc. Ecology, Pondicherry University",
         location: "Google Meet",
-        date: "7 June 2026",
+        date: "14 June 2026",
         time: "7:30 PM - 8:30 PM"
     }
 ]
