@@ -125,3 +125,51 @@
         font-size: 1.3rem;
     }
 }
+
+.adminControls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--bg-over);
+    width: 100%;
+}
+
+.updateBtn, .deleteBtn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--secondary-font);
+    border: none;
+}
+
+.updateBtn svg, .deleteBtn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.updateBtn {
+    background-color: #f1f3f4;
+    color: #3c4043;
+}
+
+.updateBtn:hover {
+    background-color: #e8eaed;
+}
+
+.deleteBtn {
+    background-color: #fce8e6;
+    color: #c5221f;
+}
+
+.deleteBtn:hover {
+    background-color: #fad2cf;
+}
