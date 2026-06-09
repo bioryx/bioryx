@@ -7,6 +7,9 @@ import Aboutus from './assets/Pages/Aboutus/Aboutus'
 import Contact from './assets/Pages/Contact/Contact'
 import Events from './assets/Pages/Events/Events'
 import People from './assets/Components/People/People'
+import Login from './assets/Pages/Login/Login'
+import Dashboard from './assets/Pages/Dashboard/Dashboard'
+
 function App() {
 
   return (
@@ -18,6 +21,8 @@ function App() {
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/events' element={<Events/>}></Route>
           <Route path='/people' element={<People/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/dashboard' element={<Dashboard/>}></Route>
         </Routes>
       </Router>
        <Analytics />

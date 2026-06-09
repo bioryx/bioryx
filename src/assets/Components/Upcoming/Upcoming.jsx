@@ -30,13 +30,38 @@ export default function Upcoming(props) {
             
             <div className={style.footer}>
                 <div className={style.badge}>OPEN PUBLIC</div>
-                <a href={props.reglink} target="_blank" rel="noopener noreferrer" className={style.register}>
-                    Register 
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                </a>
+                {props.reglink && (
+                    <a href={props.reglink} target="_blank" rel="noopener noreferrer" className={style.register}>
+                        Register 
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
+                )}
             </div>
+
+            {props.isAdmin && (
+                <div className={style.adminControls}>
+                    <button onClick={() => props.onComplete && props.onComplete(props.id)} className={style.completeBtn} title="Mark as Completed">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        Complete
+                    </button>
+                    <button onClick={() => props.onUpdate && props.onUpdate()} className={style.updateBtn} title="Edit Event">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.83 18.75a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        </svg>
+                        Edit
+                    </button>
+                    <button onClick={() => props.onDelete && props.onDelete(props.id)} className={style.deleteBtn} title="Delete Event">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m14.74 9-.34 9m-4.78 0L9.24 9m4.77-9L19.5 6.38m-1.74 0a1.88 1.88 0 0 1-1.87 1.88H8.12A1.88 1.88 0 0 1 6.24 6.38m11.52 0V19.5a2.25 2.25 0 0 1-2.25 2.25H8.12A2.25 2.25 0 0 1 6.24 19.5V6.38M9 6.38V4.5a1.88 1.88 0 0 1 1.88-1.88h2.24A1.88 1.88 0 0 1 15 4.5v1.88" />
+                        </svg>
+                        Delete
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
