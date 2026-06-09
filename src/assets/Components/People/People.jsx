@@ -15,26 +15,17 @@ const People = () => {
     {
       id: 1,
       name: "Ahammed Ihzan",
-      designation: "Secretary",
-      occupation: "2nd Year BSc Zoology, St Xavier's College Vaikom",
+      designation: "Chairperson",
+      occupation: "3rd Year BSc Zoology, St Xavier's College Vaikom",
       email: "ahammedihzan79@gmail.com",
       phoneno: "7907081880",
       img: Ihzan
     },
     {
-      id: 2,
-      name: "Nithin Nandakumar",
-      designation: "President",
-      occupation: "MSc Botany Graduate, Maharajas College Ernakulam",
-      email: "nthnnandakumar@gmail.com",
-      phoneno: "6282390873",
-      img: Nithin
-    },
-    {
       id: 3,
       name: "Georgy P Joseph",
-      designation: "Joint Secretary",
-      occupation: "1st Year MSc Zoology, Sacred Heart College Thevara",
+      designation: "Vice Chairperson",
+      occupation: "2nd Year MSc Zoology, Sacred Heart College Thevara",
       email: "georgypjoseph@gmail.com",
       phoneno: "8330886218",
       img: Gregory
@@ -42,17 +33,26 @@ const People = () => {
     {
       id: 4,
       name: "Gayatri Suresh Nair",
-      designation: "Vice President",
-      occupation: "1st Year BSc Zoology, NSS College Ottapalam",
+      designation: "Executive director",
+      occupation: "2nd Year BSc Zoology, NSS College Ottapalam",
       email: "igayatrisureshnair@gmail.com",
       phoneno: "7559871045",
       img: Gayatri
     },
     {
+      id: 2,
+      name: "Nithin Nandakumar",
+      designation: "Director of Operations",
+      occupation: "MSc Botany Graduate, Maharajas College Ernakulam",
+      email: "nthnnandakumar@gmail.com",
+      phoneno: "6282390873",
+      img: Nithin
+    },
+    {
       id: 5,
       name: "K Soniya",
-      designation: "Treasurer",
-      occupation: "2nd Year MSc Zoology, Sree Narayana College Kannur",
+      designation: "Tresurer & Finance Officer",
+      occupation: "3rd Year MSc Zoology, Sree Narayana College Kannur",
       email: "soniyasuresh979@gmail.com",
       phoneno: "7510230483",
       img: Soniya
@@ -60,8 +60,8 @@ const People = () => {
     {
       id: 7,
       name: "Dia H",
-      designation: "Board Member",
-      occupation: "2nd Year BSc Zoology, Mar Ivanos College Thiruvananthapuram",
+      designation: "Media Director",
+      occupation: "3rd Year BSc Zoology, Mar Ivanos College Thiruvananthapuram",
       email: "diahydros@gmail.com",
       phoneno: "9037753551",
       img: Dia
@@ -69,14 +69,13 @@ const People = () => {
     {
       id: 6,
       name: "Rosemary Raju",
-      designation: "Board Member",
+      designation: "Program Director",
       occupation: "3rd Year BSc Zoology, Kuriakose Elias College Mannanam",
       email: "rosemaryraju2005@gmail.com",
       phoneno: "8078771220",
       img: Rosemary
     }
   ];
-
   return (
     <>
       <Navbar />
