@@ -21,8 +21,9 @@ export const eventsAPI = {
     const response = await api.get('/api/events/getupcomingevents');
     return response.data;
   },
-  getPastEvents: async () => {
-    const response = await api.get('/api/events/getpastevents');
+  getPastEvents: async (page) => {
+    const response = await api.get(`/api/events/getpastevents?page=${page}`);
+    console.log('Past Events Response:', response.data); // Debugging log
     return response.data;
   },
   addEvent: async (eventData) => {

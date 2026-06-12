@@ -10,23 +10,27 @@ export default function Ourevents() {
 
 const [past, setPast] = useState([])
 const [upcomingEvents, setUpcomingEvents] = useState([])
+const [currentPage, setCurrentPage] = useState(1);
+const [totalPages, setTotalPages] = useState(1);
 
 useEffect(() => {
   const fetchEvents = async () => {
     try {
       const [upcomingData, pastData] = await Promise.all([
         eventsAPI.getUpcomingEvents(),
-        eventsAPI.getPastEvents()
+        eventsAPI.getPastEvents(currentPage)
       ]);
       setUpcomingEvents(upcomingData);
-      setPast(pastData);
+      setPast(pastData.events);
+      setTotalPages(pastData.total);
+
     } catch (error) {
       console.error("Error fetching events:", error);
     }
   };
 
   fetchEvents();
-}, []);
+}, [currentPage]);
 
 return (
               <>
@@ -89,6 +93,19 @@ return (
                             )
                         })}
                     </motion.div>
+                    <div className={style.pages}>
+                            <button className={style.pagebtn} 
+                            onClick={() => setCurrentPage(currentPage - 1)} 
+                            disabled={currentPage === 1}>
+                                PREV
+                            </button>
+                            <span className={style.pageNumber}>{currentPage}</span>
+                            <button className={style.pagebtn} 
+                            onClick={() => setCurrentPage(currentPage + 1)} 
+                            disabled={currentPage === totalPages}>
+                                NEXT
+                            </button>
+                        </div>
                 </motion.div>
               </div>
               </>
