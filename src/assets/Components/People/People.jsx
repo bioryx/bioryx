@@ -52,7 +52,7 @@ const People = () => {
       id: 5,
       name: "K Soniya",
       designation: "Tresurer & Finance Officer",
-      occupation: "3rd Year MSc Zoology, Sree Narayana College Kannur",
+      occupation: "2nd Year MSc Zoology, Sree Narayana College Kannur",
       email: "soniyasuresh979@gmail.com",
       phoneno: "7510230483",
       img: Soniya
