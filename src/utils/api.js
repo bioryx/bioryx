@@ -9,6 +9,16 @@ const api = axios.create({
   },
 });
 
+console.log('API URL:', API_URL); // Debugging log
+
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    alert(error.response?.data?.message || 'An error occurred. Please try again.');
+    return Promise.reject(error);
+  }
+)
+
 export const authAPI = {
   login: async (username, password) => {
     const response = await api.post('/api/auth/login', { username, password });
