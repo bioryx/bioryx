@@ -44,8 +44,6 @@ export default function Dashboard() {
         eventsAPI.getUpcomingEvents(),
         eventsAPI.getPastEvents(),
       ]);
-      console.log('Upcoming Events:', upcomingData);
-      console.log('Past Events:', pastData);
       setUpcomingEvents(upcomingData);
       setPastEvents(pastData.events);
     } catch (err) {

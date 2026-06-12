@@ -9,7 +9,6 @@ const api = axios.create({
   },
 });
 
-console.log('API URL:', API_URL); // Debugging log
 
 api.interceptors.response.use(
   (response) => response,
@@ -33,7 +32,6 @@ export const eventsAPI = {
   },
   getPastEvents: async (page) => {
     const response = await api.get(`/api/events/getpastevents?page=${page}`);
-    console.log('Past Events Response:', response.data); // Debugging log
     return response.data;
   },
   addEvent: async (eventData) => {
