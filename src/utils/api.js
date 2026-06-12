@@ -9,6 +9,15 @@ const api = axios.create({
   },
 });
 
+
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    alert(error.response?.data?.message || 'An error occurred. Please try again.');
+    return Promise.reject(error);
+  }
+)
+
 export const authAPI = {
   login: async (username, password) => {
     const response = await api.post('/api/auth/login', { username, password });
@@ -23,7 +32,6 @@ export const eventsAPI = {
   },
   getPastEvents: async (page) => {
     const response = await api.get(`/api/events/getpastevents?page=${page}`);
-    console.log('Past Events Response:', response.data); // Debugging log
     return response.data;
   },
   addEvent: async (eventData) => {

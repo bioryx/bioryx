@@ -45,7 +45,7 @@ export default function Dashboard() {
         eventsAPI.getPastEvents(),
       ]);
       setUpcomingEvents(upcomingData);
-      setPastEvents(pastData);
+      setPastEvents(pastData.events);
     } catch (err) {
       setError('Failed to fetch events from backend API.');
       console.error(err);

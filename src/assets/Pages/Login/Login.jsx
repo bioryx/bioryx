@@ -37,7 +37,11 @@ export default function Login() {
         setError('Invalid credentials');
       }
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Please check your credentials or backend server.');
+      if(err.response?.status === 429) {
+        setError(err.response?.data?.message || 'Too many login attempts. Please try again later.');
+      } else {
+        setError(err.response?.data?.message || 'Login failed. Please check your credentials or backend server.');
+      }
     } finally {
       setLoading(false);
     }
