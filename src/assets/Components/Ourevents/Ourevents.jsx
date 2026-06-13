@@ -1,17 +1,22 @@
 import style from "./Ourevents.module.css"
 import Upcoming from "../Upcoming/Upcoming"
 import Past from "../Past/Past"
-import {upcoming} from "../upcomarr"
 import { motion } from "framer-motion"
 import {useEffect} from "react"
 import {useState} from "react"
 import {eventsAPI} from "../../../utils/api"
+import Skeleton from "react-loading-skeleton"
+import "react-loading-skeleton/dist/skeleton.css"
+import {useRef} from "react"
+
 export default function Ourevents() {
 
 const [past, setPast] = useState([])
 const [upcomingEvents, setUpcomingEvents] = useState([])
 const [currentPage, setCurrentPage] = useState(1);
 const [totalPages, setTotalPages] = useState(1);
+const [loading, setLoading] = useState(true);
+const pastRef = useRef(null);
 
 useEffect(() => {
   const fetchEvents = async () => {
@@ -27,10 +32,25 @@ useEffect(() => {
     } catch (error) {
       console.error("Error fetching events:", error);
     }
+    setLoading(false);
   };
 
   fetchEvents();
 }, [currentPage]);
+
+useEffect(() => {
+  if (pastRef.current) {
+    pastRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
+}, [currentPage]);
+
+const nextPage = () => {
+  setCurrentPage(currentPage + 1);
+};
+
+const prevPage = () => {
+  setCurrentPage(currentPage - 1);
+};
 
 return (
               <>
@@ -43,12 +63,19 @@ return (
                 >
                     <h1>UPCOMING EVENTS</h1>
                     <div className={style.headerLine}></div>
-                    <motion.div 
-                      className={style.cards}
-                      initial="hidden"
-                      animate="visible"
-                      variants={{
-                        hidden: { opacity: 0 },
+                    {loading ? (
+                        <div className={style.cards}>
+                            {[...Array(2)].map((_, index) => (
+                                <Skeleton key={index} height={200} width={350} />
+                            ))}
+                        </div>
+                    ) : (
+                        <motion.div 
+                            className={style.cards}
+                            initial="hidden"
+                            animate="visible"
+                            variants={{
+                                hidden: { opacity: 0 },
                         visible: {
                           opacity: 1,
                           transition: { staggerChildren: 0.15 }
@@ -62,7 +89,7 @@ return (
                                 </div>
                             )
                         })}
-                    </motion.div>
+                    </motion.div>)}
                 </motion.div>
                 
                 <motion.div 
@@ -71,10 +98,17 @@ return (
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className={style.event}
                 >
-                    <h1>PAST EVENTS</h1>
+                    <h1 ref={pastRef}>PAST EVENTS</h1>
                     <div className={style.headerLine}></div>
-                    <motion.div 
-                      className={style.cards}
+                    
+                    {loading?(
+                        <div className={style.cards}>
+                            {[...Array(9)].map((_, index) => (
+                                <Skeleton key={index} height={200} width={350} />
+                            ))}
+                        </div>
+                    ): (<motion.div 
+                    className={style.cards}
                       initial="hidden"
                       animate="visible"
                       variants={{
@@ -92,16 +126,17 @@ return (
                                 </div>
                             )
                         })}
-                    </motion.div>
+                    </motion.div>)}
                     <div className={style.pages}>
                             <button className={style.pagebtn} 
-                            onClick={() => setCurrentPage(currentPage - 1)} 
-                            disabled={currentPage === 1}>
+                            disabled={currentPage === 1}
+                            onClick={prevPage} 
+                            >
                                 PREV
                             </button>
                             <span className={style.pageNumber}>{currentPage}</span>
                             <button className={style.pagebtn} 
-                            onClick={() => setCurrentPage(currentPage + 1)} 
+                            onClick={nextPage} 
                             disabled={currentPage === totalPages}>
                                 NEXT
                             </button>

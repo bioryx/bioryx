@@ -1,9 +1,31 @@
 import style from './Homebody.module.css'
-import { upcoming } from '../upcomarr'
 import Upcoming from '../Upcoming/Upcoming'
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { eventsAPI } from '../../../utils/api'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Homebody() {
+
+    const [upcoming, setUpcoming] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchUpcomingEvents = async () => {
+            try {
+                const data = await eventsAPI.getUpcomingEvents();
+                setUpcoming(data);
+            } catch (error) {
+                console.error("Error fetching upcoming events:", error);
+            }
+            setLoading(false);
+        };
+
+        fetchUpcomingEvents();
+    }, []);
+
     return(
         <>
         <div className={style.biomain}>
@@ -43,17 +65,24 @@ export default function Homebody() {
                         visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
                     }}
                 >
-                    {upcoming.map((event,index)=>{
-                        return(
-                            <motion.div 
-                                className={style.upcoming} 
-                                key={index}
-                                variants={{ hidden: { opacity: 0, scale: 0.9, y: 30 }, visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } } }}
+                    {loading ? (
+                        <div className={style.cards}>
+                            {[...Array(2)].map((_, index) => (
+                                <Skeleton key={index} height={200} width={350} />
+                            ))}
+                        </div>
+                    ) : (
+                        upcoming.map((event,index)=>{
+                            return(
+                                <motion.div 
+                                    className={style.upcoming} 
+                                    key={index}
+                                    variants={{ hidden: { opacity: 0, scale: 0.9, y: 30 }, visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } } }}
                             >
                                 <Upcoming image={event.image} title={event.title} host={event.host} location={event.location} date={event.date} time={event.time} reglink={event.reglink}></Upcoming>
                             </motion.div>
                         )
-                    })}
+                    }))}
                 </motion.div>
             </motion.div>
         </div>
