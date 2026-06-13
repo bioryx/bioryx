@@ -74,3 +74,9 @@
         margin: 0 1rem 30px 1rem;
     }
 }
+@media(max-width:768px) {
+    .events{
+        margin: 1rem;
+    }
+    
+}

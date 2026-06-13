@@ -28,7 +28,7 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className={style.navbarr}>
-                <button className={style.joinbtn}><a href='https://chat.whatsapp.com/IDyoVAj9X0QFfMpI2DTfC8' target="_blank" rel="noopener noreferrer">Join Us</a></button>
+                <button className={style.joinbtn}><a href='https://chat.whatsapp.com/BmVCgu6S1xVL4e1bi0QNXj' target="_blank" rel="noopener noreferrer">Join Us</a></button>
             </div>
             
             {/* Backdrop overlay */}
