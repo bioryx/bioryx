@@ -25,6 +25,7 @@
 .details img{
     flex:1;
     width: 50%;
+    height:35rem;
     border-radius: 10px;
 }
 .info{

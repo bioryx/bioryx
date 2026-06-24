@@ -60,8 +60,8 @@ const People = () => {
     {
       id: 7,
       name: "Dia H",
-      designation: "Media Director",
-      occupation: "3rd Year BSc Zoology, Mar Ivanos College Thiruvananthapuram",
+      designation: "Media and Creative Director",
+      occupation: "3rd Year BSc Zoology, Mar Ivanios College Thiruvananthapuram",
       email: "diahydros@gmail.com",
       phoneno: "9037753551",
       img: Dia
