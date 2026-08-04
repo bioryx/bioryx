@@ -1,9 +1,13 @@
 import style from "./Upcoming.module.css"
 
 export default function Upcoming(props) {
-    const dateParts = props.date ? props.date.split(' ') : ['','',''];
-    const day = dateParts[0];
-    const month = dateParts[1] ? dateParts[1].substring(0,3).toUpperCase() : '';
+    const date = props.date ? new Date(props.date) : null;
+
+    const day = date ? date.getDate() : "";
+
+    const month = date
+        ? date.toLocaleString("en-US", { month: "short" }).toUpperCase()
+        : "";
 
     return (
         <div className={style.card}>

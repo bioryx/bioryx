@@ -1,20 +1,15 @@
 import style from "./Past.module.css"
 
 export default function Past(props) {
-    const dateParts = props.date ? props.date.replace(',', '').split(' ') : ['','',''];
-    
-    let day = "";
-    let month = "";
-    
-    if (dateParts.length >= 2) {
-        if (isNaN(parseInt(dateParts[0]))) {
-            month = dateParts[0].substring(0,3).toUpperCase();
-            day = parseInt(dateParts[1]);
-        } else {
-            day = dateParts[0];
-            month = dateParts[1].substring(0,3).toUpperCase();
-        }
-    }
+    const date = props.date ? new Date(props.date) : null;
+
+const day = date && !isNaN(date)
+    ? date.getDate()
+    : "";
+
+const month = date && !isNaN(date)
+    ? date.toLocaleString("en-US", { month: "short" }).toUpperCase()
+    : "";
 
     return (
         <div className={style.card}>
