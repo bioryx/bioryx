@@ -341,7 +341,7 @@ export default function Dashboard() {
                     value={formData.date}
                     onChange={handleFormChange}
                     className={style.formInput}
-                    placeholder="e.g. 14 June 2026"
+                    placeholder="Only add date in format: YYYY-MM-DD"
                     required
                   />
                 </div>
