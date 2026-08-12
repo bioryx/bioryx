@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { eventsAPI } from '../../../utils/api';
 import Upcoming from '../../Components/Upcoming/Upcoming';
 import Past from '../../Components/Past/Past';
+import { motion } from 'framer-motion';
 import style from './Dashboard.module.css';
 
 export default function Dashboard() {
@@ -11,6 +12,8 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   // Form/Modal States
   const [showModal, setShowModal] = useState(false);
@@ -26,6 +29,7 @@ export default function Dashboard() {
   });
 
   const navigate = useNavigate();
+  const pastRef = useRef(null);
 
   // Route protection check
   useEffect(() => {
@@ -34,7 +38,7 @@ export default function Dashboard() {
     } else {
       fetchEvents();
     }
-  }, [navigate]);
+  }, [navigate, currentPage]);
 
   const fetchEvents = async () => {
     setLoading(true);
@@ -42,10 +46,11 @@ export default function Dashboard() {
     try {
       const [upcomingData, pastData] = await Promise.all([
         eventsAPI.getUpcomingEvents(),
-        eventsAPI.getPastEvents(),
+        eventsAPI.getPastEvents(currentPage),
       ]);
       setUpcomingEvents(upcomingData);
       setPastEvents(pastData.events);
+      setTotalPages(pastData.total);
     } catch (err) {
       setError('Failed to fetch events from backend API.');
       console.error(err);
@@ -58,6 +63,24 @@ export default function Dashboard() {
     localStorage.removeItem('isLoggedIn');
     navigate('/login');
   };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (pastRef.current) {
+      pastRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [currentPage]);
 
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this event?')) return;
@@ -183,98 +206,139 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Dashboard Stats & Add Button */}
-        <section className={style.controlBar}>
-          <div className={style.statsRow}>
-            <div className={style.statCard}>
-              <div className={style.statNumber}>{upcomingEvents.length}</div>
-              <div className={style.statLabel}>Upcoming Events</div>
+        <div className={style.events}>
+          {/* Upcoming Events Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className={style.event}
+          >
+            <div className={style.upcomingHeader}>
+              <h1>UPCOMING EVENTS</h1>
+              <button onClick={openAddModal} className={style.addEventBtn}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                Create New Event
+              </button>
             </div>
-            <div className={style.statCard}>
-              <div className={style.statNumber}>{pastEvents.length}</div>
-              <div className={style.statLabel}>Past Events</div>
-            </div>
-          </div>
-          <button onClick={openAddModal} className={style.addEventBtn}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
-            Create New Event
-          </button>
-        </section>
-
-        {loading ? (
-          <div className={style.loadingContainer}>
-            <div className={style.spinner}></div>
-            <p>Loading events from database...</p>
-          </div>
-        ) : (
-          <div className={style.eventsGridSection}>
-            {/* Upcoming Section */}
-            <div className={style.eventsSection}>
-              <div className={style.sectionHeader}>
-                <h2 className={style.sectionTitle}>Upcoming Events</h2>
-                <span className={style.sectionCountBadge}>{upcomingEvents.length}</span>
+            <div className={style.headerLine}></div>
+            
+            {loading ? (
+              <div className={style.loadingContainer}>
+                <div className={style.spinner}></div>
+                <p>Loading events...</p>
               </div>
-              {upcomingEvents.length === 0 ? (
-                <div className={style.emptyState}>
-                  <p>No upcoming events active. Create one to get started!</p>
-                </div>
-              ) : (
-                <div className={style.cardsContainer}>
-                  {upcomingEvents.map((event) => (
-                    <div key={event._id} className={style.cardWrapper}>
-                      <Upcoming
-                        id={event._id}
-                        title={event.title}
-                        host={event.host}
-                        location={event.location}
-                        date={event.date}
-                        time={event.time}
-                        reglink={event.reglink}
-                        isAdmin={true}
-                        onDelete={handleDelete}
-                        onComplete={handleComplete}
-                        onUpdate={() => openEditModal(event)}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Past Section */}
-            <div className={style.eventsSection}>
-              <div className={style.sectionHeader}>
-                <h2 className={style.sectionTitle}>Completed Events</h2>
-                <span className={style.sectionCountBadge}>{pastEvents.length}</span>
+            ) : upcomingEvents.length === 0 ? (
+              <div className={style.emptyState}>
+                <p>No upcoming events. Create one to get started!</p>
               </div>
-              {pastEvents.length === 0 ? (
-                <div className={style.emptyState}>
-                  <p>No completed events on record.</p>
-                </div>
-              ) : (
-                <div className={style.cardsContainer}>
-                  {pastEvents.map((event) => (
-                    <div key={event._id} className={style.cardWrapper}>
-                      <Past
-                        id={event._id}
-                        title={event.title}
-                        host={event.host}
-                        location={event.location}
-                        date={event.date}
-                        time={event.time}
-                        isAdmin={true}
-                        onDelete={handleDelete}
-                        onUpdate={() => openEditModal(event)}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+            ) : (
+              <motion.div 
+                className={style.cards}
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.15 }
+                  }
+                }}
+              >
+                {upcomingEvents.map((event) => (
+                  <div key={event._id} style={{ display: 'flex', flex: '1 1 350px', maxWidth: '500px' }}>
+                    <Upcoming
+                      id={event._id}
+                      title={event.title}
+                      host={event.host}
+                      location={event.location}
+                      date={event.date}
+                      time={event.time}
+                      reglink={event.reglink}
+                      isAdmin={true}
+                      onDelete={handleDelete}
+                      onComplete={handleComplete}
+                      onUpdate={() => openEditModal(event)}
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </motion.div>
+
+          {/* Past Events Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className={style.event}
+            ref={pastRef}
+          >
+            <h1>COMPLETED EVENTS</h1>
+            <div className={style.headerLine}></div>
+            
+            {loading ? (
+              <div className={style.loadingContainer}>
+                <div className={style.spinner}></div>
+                <p>Loading events...</p>
+              </div>
+            ) : pastEvents.length === 0 ? (
+              <div className={style.emptyState}>
+                <p>No completed events on record.</p>
+              </div>
+            ) : (
+              <motion.div 
+                className={style.cards}
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.15 }
+                  }
+                }}
+              >
+                {pastEvents.map((event) => (
+                  <div key={event._id} style={{ display: 'flex', flex: '1 1 350px', maxWidth: '500px' }}>
+                    <Past
+                      id={event._id}
+                      title={event.title}
+                      host={event.host}
+                      location={event.location}
+                      date={event.date}
+                      time={event.time}
+                      isAdmin={true}
+                      onDelete={handleDelete}
+                      onUpdate={() => openEditModal(event)}
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            )}
+
+            {/* Pagination Controls */}
+            <div className={style.pages}>
+              <button 
+                className={style.pagebtn}
+                disabled={currentPage === 1}
+                onClick={prevPage}
+              >
+                PREV
+              </button>
+              <span className={style.pageNumber}>{currentPage}</span>
+              <button 
+                className={style.pagebtn}
+                onClick={nextPage}
+                disabled={currentPage === totalPages}
+              >
+                NEXT
+              </button>
             </div>
-          </div>
-        )}
+          </motion.div>
+        </div>
       </main>
 
       {/* Modal Form Overlay */}
