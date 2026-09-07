@@ -52,7 +52,7 @@ const People = () => {
       id: 5,
       name: "K Soniya",
       designation: "Tresurer & Finance Officer",
-      occupation: "2nd Year MSc Zoology, Sree Narayana College Kannur",
+      occupation: "MSc Zoology Graduate, Sree Narayana College Kannur",
       email: "soniyasuresh979@gmail.com",
       phoneno: "7510230483",
       img: Soniya
@@ -70,7 +70,7 @@ const People = () => {
       id: 6,
       name: "Rosemary Raju",
       designation: "Program Director",
-      occupation: "3rd Year BSc Zoology, Kuriakose Elias College Mannanam",
+      occupation: "BSc Zoology Graduate, Kuriakose Elias College Mannanam",
       email: "rosemaryraju2005@gmail.com",
       phoneno: "8078771220",
       img: Rosemary
