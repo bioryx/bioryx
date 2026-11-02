@@ -34,7 +34,7 @@ export default function Homebody() {
                     <h1>BIORYX</h1>
                     <p>Bioryx is a student-run community for biology students interested in all fields of biological science, from genetics and microbiology to ecology, botany, zoology, and conservation. It’s a shared space for academic discussions, study resources, field experiences, event updates, and science-based conversations.</p>
                 </motion.div>
-                <motion.img src="https://www.fauna-flora.org/wp-content/uploads/2017/06/naturepl_00568429.jpg" alt="" initial={{opacity:0, x: 50}} whileInView={{opacity:1, x: 0}} transition={{duration:0.8}} viewport={{ once: true }}/>
+                <motion.img src="https://www.thoughtco.com/thmb/4sbZJU_EKKkNvYbg--5H1kVGFOI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(1124x0:1126x2):format(webp)/167003501-56a0089e5f9b58eba4ae8f93.jpg" alt="" initial={{opacity:0, x: 50}} whileInView={{opacity:1, x: 0}} transition={{duration:0.8}} viewport={{ once: true }}/>
             </div>
             <div className={style.biocard2}>
                 <motion.img src="https://i.pinimg.com/1200x/f2/e9/1a/f2e91a50ad0252a5731ec44444fa3b62.jpg" alt="" initial={{opacity:0, x: -50}} whileInView={{opacity:1, x: 0}} transition={{duration:0.8}} viewport={{ once: true }}/>

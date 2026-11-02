@@ -13,7 +13,9 @@ const api = axios.create({
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    alert(error.response?.data?.message || 'An error occurred. Please try again.');
+    if (!error.config?.skipAlert) {
+      alert(error.response?.data?.message || 'An error occurred. Please try again.');
+    }
     return Promise.reject(error);
   }
 )
@@ -48,6 +50,33 @@ export const eventsAPI = {
   },
   completeEvent: async (id) => {
     const response = await api.put(`/api/events/completeevent/${id}`);
+    return response.data;
+  },
+};
+
+export const bannerAPI = {
+  uploadBanner: async (file) => {
+    const formData = new FormData();
+    formData.append('bannerImage', file);
+    const response = await api.post('/api/banner/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    return response.data;
+  },
+  getBanner: async () => {
+    const response = await api.get('/api/banner/get', { responseType: 'blob' });
+    return response.data;
+  },
+  checkBannerExists: async () => {
+    try {
+      const response = await api.get('/api/banner/get', { responseType: 'blob', skipAlert: true });
+      return { exists: true, data: response.data };
+    } catch {
+      return { exists: false };
+    }
+  },
+  deleteBanner: async () => {
+    const response = await api.delete('/api/banner/delete');
     return response.data;
   },
 };

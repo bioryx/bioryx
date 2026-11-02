@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { eventsAPI } from '../../../utils/api';
+import { eventsAPI, bannerAPI } from '../../../utils/api';
 import Upcoming from '../../Components/Upcoming/Upcoming';
 import Past from '../../Components/Past/Past';
 import { motion } from 'framer-motion';
@@ -14,6 +14,12 @@ export default function Dashboard() {
   const [success, setSuccess] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+
+  // Banner States
+  const [bannerFile, setBannerFile] = useState(null);
+  const [bannerPreview, setBannerPreview] = useState(null);
+  const [currentBannerUrl, setCurrentBannerUrl] = useState(null);
+  const [bannerLoading, setBannerLoading] = useState(false);
 
   // Form/Modal States
   const [showModal, setShowModal] = useState(false);
@@ -37,6 +43,7 @@ export default function Dashboard() {
       navigate('/login');
     } else {
       fetchEvents();
+      fetchCurrentBanner();
     }
   }, [navigate, currentPage]);
 
@@ -56,6 +63,60 @@ export default function Dashboard() {
       console.error(err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Banner handlers
+  const fetchCurrentBanner = async () => {
+    try {
+      const result = await bannerAPI.checkBannerExists();
+      if (result.exists && result.data) {
+        const url = URL.createObjectURL(result.data);
+        setCurrentBannerUrl(url);
+      } else {
+        setCurrentBannerUrl(null);
+      }
+    } catch {
+      setCurrentBannerUrl(null);
+    }
+  };
+
+  const handleBannerFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setBannerFile(file);
+      const previewUrl = URL.createObjectURL(file);
+      setBannerPreview(previewUrl);
+    }
+  };
+
+  const handleBannerUpload = async () => {
+    if (!bannerFile) return;
+    setBannerLoading(true);
+    try {
+      await bannerAPI.uploadBanner(bannerFile);
+      showSuccessMessage('Banner uploaded successfully!');
+      setBannerFile(null);
+      setBannerPreview(null);
+      fetchCurrentBanner();
+    } catch (err) {
+      setError('Failed to upload banner.');
+    } finally {
+      setBannerLoading(false);
+    }
+  };
+
+  const handleBannerDelete = async () => {
+    if (!window.confirm('Are you sure you want to delete the banner? The homepage will show the default banner.')) return;
+    setBannerLoading(true);
+    try {
+      await bannerAPI.deleteBanner();
+      showSuccessMessage('Banner deleted. Default banner will now be shown.');
+      setCurrentBannerUrl(null);
+    } catch (err) {
+      setError('Failed to delete banner.');
+    } finally {
+      setBannerLoading(false);
     }
   };
 
@@ -205,6 +266,83 @@ export default function Dashboard() {
             <span>{success}</span>
           </div>
         )}
+
+        {/* Banner Management Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className={style.bannerSection}
+        >
+          <h1 className={style.bannerSectionTitle}>WEBSITE BANNER</h1>
+          <div className={style.headerLine}></div>
+
+          <div className={style.bannerManagement}>
+            {/* Current Banner Preview */}
+            <div className={style.bannerPreviewArea}>
+              <label className={style.bannerPreviewLabel}>Current Homepage Banner:</label>
+              {currentBannerUrl ? (
+                <div className={style.bannerImageWrapper}>
+                  <img src={currentBannerUrl} alt="Current Banner" className={style.bannerPreviewImg} />
+                  <span className={style.bannerBadge}>Custom Banner Active</span>
+                </div>
+              ) : (
+                <div className={style.bannerPlaceholder}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" />
+                  </svg>
+                  <p>No custom banner uploaded. Default animated banner is active.</p>
+                </div>
+              )}
+            </div>
+
+            {/* Upload Controls */}
+            <div className={style.bannerUploadControls}>
+              <label className={style.bannerPreviewLabel}>Upload New Banner:</label>
+              <div className={style.bannerFileRow}>
+                <label className={style.bannerFileLabel}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                  </svg>
+                  {bannerFile ? bannerFile.name : 'Choose Image File'}
+                  <input
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    onChange={handleBannerFileChange}
+                    className={style.bannerFileInput}
+                  />
+                </label>
+              </div>
+
+              {/* New file preview */}
+              {bannerPreview && (
+                <div className={style.bannerNewPreview}>
+                  <label className={style.bannerPreviewLabel}>Preview:</label>
+                  <img src={bannerPreview} alt="New banner preview" className={style.bannerPreviewImg} />
+                </div>
+              )}
+
+              <div className={style.bannerActions}>
+                <button
+                  onClick={handleBannerUpload}
+                  disabled={!bannerFile || bannerLoading}
+                  className={style.bannerUploadBtn}
+                >
+                  {bannerLoading ? 'Uploading...' : (currentBannerUrl ? 'Replace Banner' : 'Upload Banner')}
+                </button>
+                {currentBannerUrl && (
+                  <button
+                    onClick={handleBannerDelete}
+                    disabled={bannerLoading}
+                    className={style.bannerDeleteBtn}
+                  >
+                    {bannerLoading ? 'Deleting...' : 'Delete Banner'}
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <div className={style.events}>
           {/* Upcoming Events Section */}
