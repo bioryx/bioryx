@@ -17,6 +17,7 @@ const [currentPage, setCurrentPage] = useState(1);
 const [totalPages, setTotalPages] = useState(1);
 const [loading, setLoading] = useState(true);
 const pastRef = useRef(null);
+const isInitialLoad = useRef(true);
 
 useEffect(() => {
   const fetchEvents = async () => {
@@ -39,6 +40,10 @@ useEffect(() => {
 }, [currentPage]);
 
 useEffect(() => {
+  if (isInitialLoad.current) {
+    isInitialLoad.current = false;
+    return;
+  }
   if (pastRef.current) {
     pastRef.current.scrollIntoView({ behavior: 'smooth' });
   }
